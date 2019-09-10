@@ -1,19 +1,17 @@
 package com.neighborcell.recollection;
 
-import android.app.*;
 import android.os.*;
 import android.util.*;
 import java.io.*;
 import java.text.*;
 import java.util.*;
-import java.util.logging.*;
 
 public final class RecLog
 {
   private static final String DIR = "/neighborcell/";
   private static final String FNAME = "app.log";
 
-  private static String tag = "testament";
+  private static String tag = "recollection";
   private static String path = DIR + tag + "/";
 
   private static final String crlf = System.getProperty("line.separator");
@@ -77,7 +75,7 @@ public final class RecLog
     }
     catch ( Exception e )
     {
-
+      Log.e(tag, "", e);
     }
     finally
     {
@@ -118,7 +116,7 @@ public final class RecLog
     }
     catch (Exception e)
     {
-
+      Log.e(tag, "", e);
     }
     finally
     {
@@ -215,7 +213,7 @@ public final class RecLog
     }
     catch (Exception e)
     {
-
+      Log.e(tag, "", e);
     }
     finally
     {
@@ -244,7 +242,7 @@ public final class RecLog
     File file = new File(filePath);
     if (!file.getParentFile().exists())
     {
-      file.getParentFile().mkdir();
+      file.getParentFile().mkdirs();
     }
 
     FileOutputStream fos = null;
@@ -259,7 +257,7 @@ public final class RecLog
     }
     catch (Exception e)
     {
-
+      Log.e(tag, "", e);
     }
     finally
     {
